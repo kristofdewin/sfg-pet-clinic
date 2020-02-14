@@ -9,5 +9,6 @@ public class MainView extends VerticalLayout {
 
     public MainView(){
         add(new Text("Welcome to mainview"));
+        //todo create views for petclinic
     }
 }
