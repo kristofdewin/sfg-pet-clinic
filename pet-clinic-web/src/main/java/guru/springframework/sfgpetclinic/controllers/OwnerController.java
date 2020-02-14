@@ -1,10 +1,11 @@
 package guru.springframework.sfgpetclinic.controllers;
 
 import guru.springframework.sfgpetclinic.services.OwnerService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-
+@Profile("controlleractive")
 @RequestMapping("/owners")
 @Controller
 public class OwnerController {
