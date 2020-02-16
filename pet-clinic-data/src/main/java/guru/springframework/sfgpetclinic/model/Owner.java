@@ -30,6 +30,6 @@ public class Owner extends Person {
     @Column(name = "telephone")
     private String telephone;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner", fetch = FetchType.EAGER)
     private Set<Pet> pets = new HashSet<>();
 }
