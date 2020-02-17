@@ -61,6 +61,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
     protected UserDetailsService userDetailsService() {
         UserDetails user =
                 User.withUsername("user")
+                        //{noop} makes sure password encoder doesn't do anything
                         .password("{noop}password")
                         .roles("USER")
                         .build();

@@ -20,9 +20,12 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
         addClassName("login-view");
         setSizeFull();
 
+        //Makes LoginView full size and centers its content both horizontally and vertically,
+        //by calling setAlignItems(Alignment.CENTER) and setJustifyContentMode(JustifyContentMode.CENTER).
         setJustifyContentMode(JustifyContentMode.CENTER);
         setAlignItems(Alignment.CENTER);
 
+        //Sets the LoginForm action to "login" to post the login form to Spring Security
         login.setAction("login");
 
         add(
@@ -34,6 +37,8 @@ public class LoginView extends VerticalLayout implements BeforeEnterObserver {
 
     @Override
     public void beforeEnter(BeforeEnterEvent beforeEnterEvent) {
+        //inform the user about an authentication error
+        //Reads query parameters and shows an error if a login attempt fails
         if(!beforeEnterEvent.getLocation()
         .getQueryParameters()
         .getParameters()
