@@ -174,7 +174,7 @@
                 https://repo1.maven.org/maven2/com/github/eirslett/frontend-maven-plugin/ -->
                 <version>1.7.6</version>
                <goals>
-                   <goal> install-node-and-npm</goal>
+                   <goal> install-node-and-npm -DnodeVersion="v12.14.0" </goal>
                </goals>
             </plugin>
 
