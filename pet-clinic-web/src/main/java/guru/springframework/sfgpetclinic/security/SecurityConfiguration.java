@@ -1,5 +1,6 @@
 package guru.springframework.sfgpetclinic.security;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
@@ -53,6 +54,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .and().logout().logoutSuccessUrl(LOGOUT_SUCCESS_URL); //
     }
 
+    @Bean
     @Override
     //Defines a single user with the username "user" and password "password",
     // in an in-memory DetailsManager.
