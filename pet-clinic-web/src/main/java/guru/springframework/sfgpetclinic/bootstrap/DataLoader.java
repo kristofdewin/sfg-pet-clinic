@@ -3,6 +3,7 @@ package guru.springframework.sfgpetclinic.bootstrap;
 import guru.springframework.sfgpetclinic.model.*;
 import guru.springframework.sfgpetclinic.services.*;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
@@ -15,6 +16,7 @@ public class DataLoader implements CommandLineRunner {
     private final PetTypeService petTypeService;
     private final SpecialtyService specialtyService;
     private final VisitService visitService;
+    private final BCryptPasswordEncoder bCryptPasswordEncoder;
 
     public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialtyService specialtyService, VisitService visitService) {
         this.ownerService = ownerService;
@@ -22,6 +24,7 @@ public class DataLoader implements CommandLineRunner {
         this.petTypeService = petTypeService;
         this.specialtyService = specialtyService;
         this.visitService = visitService;
+        bCryptPasswordEncoder = new BCryptPasswordEncoder();
     }
 
     @Override
@@ -61,6 +64,13 @@ public class DataLoader implements CommandLineRunner {
         owner1.setAdress("veldenstraat 71");
         owner1.setCity("Mechelen");
         owner1.setTelephone("015000000");
+        owner1.setUserName("mikael");
+        owner1.setPass(bCryptPasswordEncoder.encode("welkom"));
+
+        //check password encoding and matches function
+        System.out.println("password encryption function test"
+                +bCryptPasswordEncoder.matches("welkom", owner1.getPass()));
+
 
         Pet mikaPet = new Pet();
         mikaPet.setPetType(savedCatPetType);

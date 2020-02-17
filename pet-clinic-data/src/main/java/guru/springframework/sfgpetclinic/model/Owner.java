@@ -13,12 +13,14 @@ import java.util.Set;
 @Table(name = "owners")
 public class Owner extends Person {
     @Builder
-    public Owner(Long id,String firstName, String lastName, String adress, String city, String telephone, Set<Pet> pets) {
+    public Owner(Long id, String firstName, String lastName, String adress, String city, String telephone, Set<Pet> pets, String userName, String pass) {
         super(id,firstName, lastName);
         this.adress = adress;
         this.city = city;
         this.telephone = telephone;
         this.pets = pets;
+        this.userName = userName;
+        this.pass = pass;
     }
 
     @Column(name = "adress")
@@ -32,4 +34,10 @@ public class Owner extends Person {
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner", fetch = FetchType.EAGER)
     private Set<Pet> pets = new HashSet<>();
+
+    @Column(name = "userName")
+    private String userName;
+
+    @Column(name = "password")
+    private String pass;
 }
