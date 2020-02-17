@@ -1,4 +1,4 @@
-package guru.springframework.sfgpetclinic;
+package guru.springframework.sfgpetclinic.views;
 
 
 import com.vaadin.flow.component.grid.Grid;
@@ -8,12 +8,12 @@ import guru.springframework.sfgpetclinic.model.Pet;
 import guru.springframework.sfgpetclinic.services.springdatajpa.PetSDJpaService;
 
 @Route
-public class MainView extends VerticalLayout {
+public class PetView extends VerticalLayout {
 
     private final PetSDJpaService petSDJpaService;
     private Grid<Pet> grid;
 
-    public MainView(PetSDJpaService petSDJpaService) {
+    public PetView(PetSDJpaService petSDJpaService) {
         this.petSDJpaService = petSDJpaService;
         this.grid=new Grid<>(Pet.class);
         add(grid);
