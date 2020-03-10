@@ -1,5 +1,5 @@
 [![CircleCI](https://circleci.com/gh/kristofdewin/sfg-pet-clinic.svg?style=svg)](https://circleci.com/gh/kristofdewin/sfg-pet-clinic)
-# sfg-pet-clinic by Kristof
+# sfg-pet-clinic by Kristof (work in progress)
 
 SFT Pet Clinic project made while attending Java EE developer course @ Intec Brussel.
 
